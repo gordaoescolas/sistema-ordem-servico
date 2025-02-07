@@ -31,7 +31,7 @@ Um sistema de gerenciamento de ordens de serviço (OS) desenvolvido em Python e 
 ## 🚀 Como Executar
 
 1. Execute `Iniciar Servidor.py` para iniciar o servidor web.
-2. Acesse [http://localhost](http://localhost) no navegador.
+2. Acesse [http://localhost](http://localhost) o o IP do host no navegador.
 3. Use `Personalizar o Cabeçalho.py` para customizar o cabeçalho.
 
 ## ✨ Funcionalidades
