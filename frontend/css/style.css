@@ -1,0 +1,365 @@
+:root {
+    --primary-color: #fff;
+    --accent-color: #001fae;
+    --text-color: #333;
+    --border-color: #e1e1e1;
+    --text-light: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-sm:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+textarea {
+    height: 100px;
+    grid-column: 1 / -1;
+    min-height: 100px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    grid-column: 1 / -1;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+#defeito, #servico_executado, #observacoes {
+    grid-column: 1 / -1;
+    min-height: 100px;
+}
+
+@media (max-width: 768px) {
+    #osForm {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        margin: 10px;
+    }
+}
+
+/* Estilo para campos monetários */
+input[type="number"] {
+    text-align: right;
+}
+
+/* Grupos de campos relacionados */
+.field-group {
+    display: contents;
+}
+
+/* Feedback visual para campos required */
+input:required {
+    border-left: 3px solid var(--accent-color);
+}
+
+#osForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 20px auto;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+search-box button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #0056b3;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+@media print {
+    .actions {
+        display: none;
+    }
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #333;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+}
+
+/* Estilos para impressão */
+@media print {
+    body {
+        margin: 0;
+        padding: 10px;
+        background: white;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #osForm {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .form-group {
+        margin-bottom: 8px;
+        page-break-inside: avoid;
+    }
+
+    textarea {
+        height: 60px !important;
+        min-height: auto !important;
+    }
+
+    input, select, textarea {
+        border: 1px solid #ccc;
+        padding: 4px;
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+
+    .actions {
+        display: none;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin: 0 0 10px 0;
+    }
+
+    /* Oculta elementos desnecessários para impressão */
+    button, .btn, input[type="number"]::-webkit-inner-spin-button {
+        display: none;
+    }
+
+    /* Força quebra de página */
+    @page {
+        margin: 0.5cm;
+        size: A4 portrait;
+    }
+}
+
+/* Estilos do cabeçalho */
+.main-header {
+    background-color: var(--accent-color);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 2rem;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.logo img {
+    max-height: 60px;
+    width: auto;
+    display: block;
+}
+
+.company-info {
+    flex: 1;
+}
+
+.company-info h2 {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 1.5rem;
+}
+
+.company-info p {
+    margin: 0.25rem 0;
+    color: var(--text-light);
+    opacity: 0.9;
+}
+
+/* Ajuste para impressão */
+@media print {
+    .main-header {
+        box-shadow: none;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 1rem;
+    }
+    
+    .logo img {
+        max-height: 60px;
+    }
+    
+    .company-info h2 {
+        font-size: 1.2rem;
+    }
+    
+    .company-info p {
+        font-size: 0.9rem;
+    }
+}
